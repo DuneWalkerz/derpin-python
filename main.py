@@ -13,6 +13,19 @@ board = [
 [0,8,0,0,3,7,0,0,0]
 ]
 
+# co_ordinate in this case is an (x,y) cordinate value for defineing look location. this will validate if the num at that square is valid by cheaking row, col and 3 x 3 square
+#numeral is value being tested
+def valid(bo,numeral, co_ordinate): 
+
+    #cheak row
+    for i in range(len(bo[0])):
+        if bo[co_ordinate[0][i]] == num and co_ordinate[1] !=i:
+            return False
+    #cheak col
+    for i in range(len(bo)):
+        if bo[i][co_ordinate[1] == num and co_ordinate[0] !=i:
+            return False
+    #cheak 3x3 box
 
 def board_print(bo):
 
@@ -34,4 +47,8 @@ def board_print(bo):
 def find_empty_square(bo):
     for i in range(len(bo)):
         for j in range(len(bo)):
-            if bo[i][j] == 0
+            if bo[i][j] == 0:
+                return (i, j) # row, col
+    return None
+
+
